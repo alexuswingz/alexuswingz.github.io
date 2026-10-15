@@ -71,7 +71,7 @@
           <div class="project__top"><div style="display:flex;align-items:center;gap:12px"><div class="project__icon"><img src="${p.icon}" alt="" /></div><div><div class="project__kicker">${esc(p.kicker)}</div></div></div>${badgeFor(p)}</div>
           <h3>${esc(p.name)}</h3>
           <p>${esc(p.summary)}</p>
-          <div class="project__tags">${p.stack.slice(0, 5).map((s) => `<span class="chip">${esc(s)}</span>`).join('')}${p.stack.length > 5 ? `<span class="chip chip--accent">+${p.stack.length - 5}</span>` : ''}</div>
+          <div class="project__tags">${(p.skills || p.stack).slice(0, 5).map((s) => `<span class="chip">${esc(s)}</span>`).join('')}${(p.skills || p.stack).length > 5 ? `<span class="chip chip--accent">+${(p.skills || p.stack).length - 5} skills</span>` : ''}</div>
           <div class="project__cta">${cta} ${ICONS.arrow}</div>
         </div>
       </article>`;
@@ -133,7 +133,8 @@
       <div class="facts">${p.facts.map(([k, v]) => `<div class="fact"><div class="mono">${esc(k)}</div><strong>${esc(v)}</strong></div>`).join('')}</div>
       <div class="modal__section"><h4>Role</h4><p style="color:var(--text-dim)">${esc(p.role)} · ${esc(p.year)}</p></div>
       <div class="modal__section"><h4>What I built</h4><ul class="highlights">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul></div>
-      <div class="modal__section"><h4>Stack</h4><div class="job__stack" style="margin-top:0">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join('')}</div></div>
+      ${p.skills ? `<div class="modal__section"><h4>Skills demonstrated · ${p.skills.length}</h4><ul class="skills-list">${p.skills.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></div>` : `<div class="modal__section"><h4>Stack</h4><div class="job__stack" style="margin-top:0">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join('')}</div></div>`}
+      ${p.repo && p.repoPublic ? `<div class="modal__section"><h4>Source code</h4><a class="btn btn--sm" href="${p.repo}" target="_blank" rel="noopener">${ICONS.ext} ${esc(p.repo.replace('https://', ''))}</a></div>` : ''}
       ${p.gallery.length && p.demo.kind === 'embed' ? `<div class="modal__section"><h4>Screens</h4><div class="gallery" style="max-width:none;grid-template-columns:repeat(auto-fill,minmax(120px,1fr))">${p.gallery.map((g) => `<button data-lightbox="${g}" data-cursor="View" aria-label="Enlarge screenshot"><img loading="lazy" src="${g}" alt="" /></button>`).join('')}</div></div>` : ''}
       <div class="modal__links">${p.links.map((l) => `<a class="btn ${l.primary ? 'btn--primary' : ''}" href="${l.url}" target="_blank" rel="noopener">${esc(l.label)} ${ICONS.ext}</a>`).join('')}${p.demo.kind === 'embed' ? `<a class="btn" href="${p.demo.url}" target="_blank" rel="noopener">Open demo in a new tab ${ICONS.ext}</a>` : ''}</div>`;
   }

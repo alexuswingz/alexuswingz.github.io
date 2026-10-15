@@ -116,6 +116,8 @@ window.PORTFOLIO = {
         'assets/projects/cashnt/01-home.webp', 'assets/projects/cashnt/02-assets.webp', 'assets/projects/cashnt/03-spend.webp',
         'assets/projects/cashnt/04-goals.webp', 'assets/projects/cashnt/05-trips.webp', 'assets/projects/cashnt/06-you.webp',
       ],
+      repo: 'https://github.com/alexuswingz/cashnt',
+      skills: ['React 19','TypeScript','Vite','Capacitor 8 (iOS + Android)','Firebase Authentication (Apple / Google / email)','Express.js REST API','PostgreSQL','Local-first sync architecture','PWA & custom service worker','Recharts data visualisation','Design systems & CSS tokens','LLM integration (AI coach)','Biometric auth (Face ID)','Local notifications & haptics','Xcode + App Store Connect API automation','App Store review & privacy compliance','Railway deployment','Release management & ASO'],
       stack: ['React 19', 'TypeScript', 'Vite', 'Capacitor 8', 'Firebase Auth', 'Express', 'PostgreSQL', 'Railway', 'Recharts', 'PWA', 'Xcode / App Store Connect'],
       highlights: [
         '"Safe to spend today" engine computes one daily number from balances, bills, paydays and savings goals.',
@@ -146,6 +148,8 @@ window.PORTFOLIO = {
         'assets/projects/loca/shots/home.webp', 'assets/projects/loca/shots/thread.webp', 'assets/projects/loca/shots/messages.webp',
         'assets/projects/loca/shots/profile.webp', 'assets/projects/loca/shots/compose.webp', 'assets/projects/loca/shots/signin.webp',
       ],
+      repo: 'https://github.com/alexuswingz/loca',
+      skills: ['React','TypeScript','Vite','pnpm monorepo architecture','NestJS','Prisma ORM & migrations','PostgreSQL 18','Capacitor iOS','Firebase sign-in (Google / Apple)','JWT access tokens & cookie sessions','Rate limiting & origin (CSRF) checks','CSP / HSTS security headers','Server-Sent Events live feed','APNs push notifications','S3-compatible object storage','Apple MapKit & OpenStreetMap','OpenAI moderation','Resend transactional email','End-to-end testing (17 suites)','Docker + Caddy reverse proxy','Railway private networking','OpenAPI / Swagger docs'],
       stack: ['React', 'Vite', 'NestJS', 'Prisma', 'PostgreSQL 18', 'Capacitor (iOS)', 'Firebase sign-in', 'APNs push', 'S3 media', 'Apple Maps', 'OpenAI moderation', 'Resend', 'Caddy', 'Railway'],
       highlights: [
         'pnpm monorepo: React web app, NestJS + Prisma API, shared packages. 34-table schema, 18 migrations, seeded dev database that ships its own PostgreSQL.',
@@ -176,6 +180,8 @@ window.PORTFOLIO = {
         'assets/projects/studyverse/shots/home.webp', 'assets/projects/studyverse/shots/schedule.webp', 'assets/projects/studyverse/shots/study.webp',
         'assets/projects/studyverse/shots/community.webp', 'assets/projects/studyverse/shots/leaderboard.webp', 'assets/projects/studyverse/shots/home-light.webp',
       ],
+      repo: 'https://github.com/alexuswingz/studyverse',
+      skills: ['React 19','TypeScript (strict)','Vite 8','Tailwind CSS 4 (CSS-first tokens)','React Router 7','Zustand state','Motion animations','Capacitor 8','Node.js REST API','PostgreSQL migrations & seeds','WebSockets realtime','Stale-while-revalidate caching','OpenAI vision (photo to timetable)','Docker','Railway','Brand & design-system pipeline (SVG, sharp)','Accessibility (WCAG AA)','Light / dark theming'],
       stack: ['React 19', 'TypeScript (strict)', 'Vite 8', 'Tailwind CSS 4', 'React Router 7', 'Zustand', 'Motion', 'Capacitor 8', 'Node API', 'PostgreSQL', 'WebSockets', 'OpenAI', 'Railway'],
       highlights: [
         'Brand identity and design system built from scratch: a scripted SVG pipeline renders every logo, icon and favicon from geometry, with light and dark themes and WCAG AA contrast on every token pair.',
@@ -203,6 +209,8 @@ window.PORTFOLIO = {
         'assets/projects/proof/shots/home.webp', 'assets/projects/proof/shots/create.webp', 'assets/projects/proof/shots/styles.webp',
         'assets/projects/proof/shots/images.webp', 'assets/projects/proof/shots/design-system.webp', 'assets/projects/proof/shots/design-system-2.webp',
       ],
+      repo: 'https://github.com/alexuswingz/cinemi',
+      skills: ['React 19','TypeScript 6','Vite 8','Tailwind CSS 4','Radix UI primitives','shadcn/ui conventions','class-variance-authority','Design tokens (primitive to semantic)','MediaPipe on-device ML (WASM)','Canvas image processing','Self-hosted variable fonts','Mobile-first UX for Capacitor','Accessibility (touch targets, reduced motion)','Monetisation UX (credits, rewarded ads)','ESLint + strict typecheck tooling'],
       stack: ['React 19', 'TypeScript 6', 'Vite 8', 'Tailwind CSS 4', 'Radix UI', 'CVA', 'MediaPipe (WASM)', 'shadcn/ui', 'Capacitor-ready'],
       highlights: [
         '"Editorial After Dark" design system: primitives, semantic tokens, dark + light themes, motion and safe-area tokens. The reference page reads token values live from the CSS, so documentation cannot drift from code.',
@@ -232,6 +240,8 @@ window.PORTFOLIO = {
         'assets/projects/ghostnt/01-room.webp', 'assets/projects/ghostnt/04-chat.webp', 'assets/projects/ghostnt/03-ticket.webp',
         'assets/projects/ghostnt/05-lines.webp', 'assets/projects/ghostnt/06-nearby.webp', 'assets/projects/ghostnt/02-closed.webp',
       ],
+      repo: 'https://github.com/alexuswingz/ghostnt',
+      skills: ['React 19','TypeScript','Vite','Capacitor 8','Swift (CallKit integration)','Express 5','PostgreSQL (CTEs, lateral joins)','SQL schema migrations','WebSockets with heartbeat','Firebase Authentication','Keyset pagination & partial indexes','Advisory locks (concurrency control)','Rate limiting','Route-level code splitting','Push notifications','Geolocation (Nearby)','E2E smoke testing','Railway with health checks','TestFlight / App Store Connect automation'],
       stack: ['React 19', 'TypeScript', 'Vite', 'Capacitor 8', 'Express 5', 'PostgreSQL', 'WebSockets', 'Firebase Auth', 'CallKit (Swift)', 'Railway', 'App Store Connect'],
       highlights: [
         'A product with real rules: the room opens for one hour a night (Asia/Manila), one answered question is your ticket in, you pick people by their answers, and held lines climb a reveal ladder: voices, first names, then faces. Miss two nights and the line flatlines. Three lines max.',
@@ -261,6 +271,8 @@ window.PORTFOLIO = {
         'assets/projects/matteosbrew/shots/home.webp', 'assets/projects/matteosbrew/shots/menu.webp', 'assets/projects/matteosbrew/shots/home-2.webp',
         'assets/projects/matteosbrew/shots/home-3.webp', 'assets/projects/matteosbrew/shots/m-home.webp', 'assets/projects/matteosbrew/shots/m-menu.webp',
       ],
+      repo: 'https://github.com/alexuswingz/MatteosBrew',
+      skills: ['React 19','JavaScript (JSX)','Vite 7','Tailwind CSS 4','Framer Motion','React Router 7','QR code generation','Responsive layout','Video hero & media optimisation','Search & filter UI','Static build & hosting','Client delivery'],
       stack: ['React 19', 'Vite 7', 'Tailwind CSS 4', 'Framer Motion', 'React Router 7', 'QR codes', 'Static hosting'],
       highlights: [
         'Full-bleed video hero, animated sections for the story, menu preview, events, packages and location, all tuned for phones first.',
@@ -287,6 +299,8 @@ window.PORTFOLIO = {
         'assets/projects/jobfinder/shots/feed.webp', 'assets/projects/jobfinder/shots/detail.webp',
         'assets/projects/jobfinder/shots/saved.webp', 'assets/projects/jobfinder/shots/profile.webp',
       ],
+      repo: 'https://github.com/alexuswingz/job-finder',
+      skills: ['Python','FastAPI','httpx + asyncio concurrency','Web scraping (SEEK, LinkedIn, Indeed)','RapidAPI integration','Scoring algorithm design','SQLite','PostgreSQL','Caching & deduplication','.docx parsing (CV extraction)','React','TypeScript','Tailwind CSS 4','TanStack Query (optimistic updates)','Capacitor-ready mobile build','Railway'],
       stack: ['Python', 'FastAPI', 'httpx', 'SQLite / PostgreSQL', 'React', 'TypeScript', 'Tailwind CSS 4', 'TanStack Query', 'Capacitor-ready', 'Railway'],
       highlights: [
         'Scoring engine gives every job a 0–100 match: skill overlap (45%), title relevance (30%), recency (15%), location and remote fit (10%), with a seniority adjustment. Matched skills are shown on every card.',
@@ -313,6 +327,8 @@ window.PORTFOLIO = {
       icon: 'assets/projects/lawsystem/icon.svg',
       cover: 'assets/projects/lawsystem/shots/welcome.webp',
       gallery: ['assets/projects/lawsystem/shots/welcome.webp', 'assets/projects/lawsystem/shots/typed.webp'],
+      repo: 'https://github.com/alexuswingz/LawSystem',
+      skills: ['Next.js 14 (App Router)','TypeScript','Tailwind CSS','OpenAI API (streaming)','Prompt engineering','PostgreSQL (pg)','REST route handlers','Conversation persistence','Image upload & document analysis','PWA manifest','Responsive glassmorphism UI','Railway'],
       stack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'OpenAI GPT-4o-mini', 'PostgreSQL', 'PWA', 'Railway'],
       highlights: [
         'Streaming chat on the Next.js App Router with a system prompt engineered for empathy: acknowledge the person\'s situation, tie answers to their specific case, explain statutes simply, always finish with actionable steps.',

@@ -90,9 +90,15 @@ main, header, footer { position: relative; z-index: 2; }
 .header.is-scrolled { background: rgba(11,13,12,0.72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-color: var(--line); }
 .header.is-hidden { transform: translateY(-100%); }
 .header .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em; }
-.brand__mark { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), #1f9f68); color: var(--accent-ink); display: grid; place-items: center; font-weight: 800; font-size: 13px; letter-spacing: 0; }
-.brand small { font-weight: 400; color: var(--text-dim); }
+/* Wordmark: same treatment as the loading screen (Alexus in cream, Joaquin in mint) */
+.brand { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.045em; line-height: 1; }
+.brand__word { display: inline-flex; gap: 0.22em; }
+.brand__first { color: var(--text); }
+.brand__last { color: var(--accent); position: relative; }
+.brand__last::after { content: ''; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+.brand:hover .brand__last::after { transform: scaleX(1); }
+.brand__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); margin-top: 2px; animation: pulse 2.4s infinite; }
+@media (max-width: 480px) { .brand { font-size: 19px; } }
 .nav { display: flex; gap: 4px; }
 .nav a { padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--text-dim); transition: color .2s, background .2s; }
 .nav a:hover, .nav a.is-active { color: var(--text); background: rgba(255,255,255,0.06); }

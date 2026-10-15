@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex" />
+  <script>
+    // GitHub Pages serves this for any unknown path. The embedded demos are single-page apps with
+    // client-side routes (e.g. /demos/jobfinder/feed), so bounce to the demo's index.html and hand it
+    // the original path in ?p=; the demo's index restores it with history.replaceState before booting.
+    (function () {
+      var p = location.pathname, m = p.match(/^\/demos\/([^/]+)\//);
+      if (m) location.replace('/demos/' + m[1] + '/?p=' + encodeURIComponent(p + location.search) + location.hash);
+      else location.replace('/');
+    })();
+  </script>
+</head>
+<body style="background:#0b0d0c;color:#a6b0a8;font-family:system-ui;display:grid;place-items:center;height:100vh;margin:0">Redirecting…</body>
+</html>

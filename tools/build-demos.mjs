@@ -42,6 +42,16 @@ const demos = {
   },
 };
 
+// GitHub Pages has no SPA fallback: /404.html redirects unknown demo paths to the demo's index with
+// the original path in ?p=. This inline script puts that path back before the app's router boots.
+export const RESTORE_SNIPPET = '<script>(function(){var q=new URLSearchParams(location.search).get("p");if(q){history.replaceState(null,"",q+location.hash);}})();</script>';
+export function restoreDeepLinks(indexPath) {
+  let html = readFileSync(indexPath, 'utf8');
+  if (html.includes('get("p")')) return;
+  html = html.replace('<head>', '<head>\n    ' + RESTORE_SNIPPET);
+  writeFileSync(indexPath, html);
+}
+
 const only = process.argv.slice(2);
 for (const [name, d] of Object.entries(demos)) {
   if (only.length && !only.includes(name)) continue;
@@ -52,6 +62,7 @@ for (const [name, d] of Object.entries(demos)) {
     { cwd: d.src, stdio: 'inherit', shell: true, env: { ...process.env, MSYS_NO_PATHCONV: '1', ...d.env } });
   if (r.status !== 0) { console.error(`build failed: ${name}`); process.exitCode = 1; continue; }
   d.after?.(out);
+  restoreDeepLinks(resolve(out, 'index.html'));
   const html = readFileSync(resolve(out, 'index.html'), 'utf8');
   if (!html.includes(`/demos/${name}/assets/`)) { console.error(`${name}: index.html does not reference /demos/${name}/assets — check the --base path`); process.exitCode = 1; }
 }

@@ -211,7 +211,7 @@ window.PORTFOLIO = {
         'Monetization components designed in: credit meter, rewarded-ad offer and confirmation, labelled ad slots that reserve their size and never sit near creative controls.',
         'Built for Capacitor from day one: self-hosted variable fonts (works offline), keyboard-inset handling, 44px touch targets, hover only on fine pointers.',
       ],
-      demo: { kind: 'embed', url: 'demos/proof/app', note: 'Generation is simulated and everything runs in your browser. Face retouch downloads a 12 MB WASM model on first use. This build still carries the pre-rebrand "Proof" wordmark.' },
+      demo: { kind: 'embed', url: 'demos/proof/?p=/demos/proof/app', note: 'Generation is simulated and everything runs in your browser. Face retouch downloads a 12 MB WASM model on first use. This build still carries the pre-rebrand "Proof" wordmark.' },
       links: [
         { label: 'Open the design-system reference', url: 'demos/proof/', primary: false },
       ],
@@ -297,7 +297,7 @@ window.PORTFOLIO = {
       ],
       demo: { kind: 'gallery', note: 'Open the app in a full window to try it: search, filters, save / apply / dismiss and the profile editor all work. It answers the API from an in-browser sample dataset, since the scrapers need a server.' },
       links: [
-        { label: 'Open the live app', url: 'demos/jobfinder/feed', primary: true },
+        { label: 'Open the live app', url: 'demos/jobfinder/?p=/demos/jobfinder/feed', primary: true },
       ],
       facts: [['Sources', '4 job boards'], ['Scoring', '0–100 weighted'], ['Backend', 'FastAPI'], ['Cache', '6 h']],
     },

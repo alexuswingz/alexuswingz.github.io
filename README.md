@@ -58,8 +58,10 @@ backend blanked out:
 | `demos/studyverse` | `../Studyverse` | No `VITE_API_URL` → in-memory mocks + simulated live events |
 | `demos/proof` | `../AI Generation` | Generation is simulated; face retouch runs MediaPipe on-device |
 | `demos/jobfinder` | `../Job Finder/frontend` | `tools/shims/jobfinder-demo-shim.js` intercepts `fetch()` and answers the API from a sample dataset |
+| `demos/matteosbrew` | `../MatteosBrew` | Static client site (a clone of the GitHub repo with the base-path patch applied) |
 
-LOCA is linked to its live Railway deployment (it needs an account) and shown as a gallery.
+LOCA is linked to its live Railway deployment (it needs an account) and shown as a gallery. Ghostn't (App Store
+screenshots) and Alexus Legal AI (needs an OpenAI key + database) are galleries too. Proof is shown under its new name, Cinemi.
 The 1000 Bananas platform is a company project and is described with an architecture diagram only.
 
 Three one-line changes were made in the source projects so they can run under a sub-path

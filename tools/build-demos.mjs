@@ -25,6 +25,8 @@ const demos = {
   },
   studyverse: { src: resolve(desktop, 'Studyverse'), env: { VITE_API_URL: '', VITE_REALTIME_URL: '' } },
   proof: { src: resolve(desktop, 'AI Generation'), env: {} },
+  // Static client site; the Desktop copy carries the base-path patch (BrowserRouter basename + asset paths).
+  matteosbrew: { src: resolve(desktop, 'MatteosBrew'), env: {} },
   jobfinder: {
     src: resolve(desktop, 'Job Finder', 'frontend'),
     env: { VITE_API_URL: '' },

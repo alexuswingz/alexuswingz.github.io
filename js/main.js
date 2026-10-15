@@ -60,10 +60,12 @@
              <div class="arch__box"><strong>MCP server</strong>AI tool access</div>
              <div class="arch__box arch__box--wide"><strong>Amazon SP-API · Ads API</strong>multi-account sync · reporting</div>
            </div>`
-        : `<div class="phone"><img loading="lazy" src="${p.cover}" alt="${esc(p.name)} screenshot" /></div>${p.gallery[1] ? `<div class="phone phone--second"><img loading="lazy" src="${p.gallery[1]}" alt="" /></div>` : ''}`;
-      const cta = p.demo.kind === 'embed' ? 'Try the live demo' : p.demo.kind === 'gallery' ? 'See it in action' : 'See the architecture';
+        : p.frame === 'browser'
+          ? `<div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>${esc(p.name.toLowerCase().replace(/[^a-z]/g, ''))}.app</span></div><img loading="lazy" src="${p.cover}" alt="${esc(p.name)} screenshot" /></div>${p.gallery[4] ? `<div class="phone phone--side"><img loading="lazy" src="${p.gallery[4]}" alt="" /></div>` : ''}`
+          : `<div class="phone"><img loading="lazy" src="${p.cover}" alt="${esc(p.name)} screenshot" /></div>${p.gallery[1] ? `<div class="phone phone--second"><img loading="lazy" src="${p.gallery[1]}" alt="" /></div>` : ''}`;
+      const cta = p.demo.kind === 'embed' ? (p.frame === 'browser' ? 'Open the live site' : 'Try the live demo') : p.demo.kind === 'gallery' ? 'See it in action' : 'See the architecture';
       return `
-      <article class="project reveal ${i === 0 ? 'project--featured' : ''}" data-project="${p.id}" data-cursor="Open" style="--p-accent:${p.accent}" tabindex="0" role="button" aria-label="Open ${esc(p.name)}">
+      <article class="project reveal ${p.featured ? 'project--featured' : ''} ${p.frame === 'browser' ? 'project--browser' : ''}" data-project="${p.id}" data-cursor="Open" style="--p-accent:${p.accent}" tabindex="0" role="button" aria-label="Open ${esc(p.name)}">
         <div class="project__visual">${visual}<div class="project__glare"></div></div>
         <div class="project__body">
           <div class="project__top"><div style="display:flex;align-items:center;gap:12px"><div class="project__icon"><img src="${p.icon}" alt="" /></div><div><div class="project__kicker">${esc(p.kicker)}</div></div></div>${badgeFor(p)}</div>
@@ -103,6 +105,12 @@
   }
 
   function deviceMarkup(p) {
+    if (p.demo.kind === 'embed' && p.frame === 'browser') {
+      return `<div class="browser browser--live"><div class="browser__bar"><i></i><i></i><i></i><span>${esc(p.demo.url)}</span></div>
+        <div class="browser__screen"><div class="device__loading" id="deviceLoading"><div style="display:grid;place-items:center"><i></i>Loading ${esc(p.name)}</div></div><iframe id="demoFrame" title="${esc(p.name)} live site" src="${p.demo.url}" loading="eager"></iframe></div></div>
+        <div class="demo__actions"><button class="btn btn--sm" id="demoReload">${ICONS.refresh} Reload</button><a class="btn btn--sm btn--primary" href="${p.demo.url}" target="_blank" rel="noopener">${ICONS.ext} Open full screen</a></div>
+        <p class="demo__note">${esc(p.demo.note)}</p>`;
+    }
     if (p.demo.kind === 'embed') {
       return `<div class="device-wrap"><div class="device" id="device"><div class="device__frame"></div><div class="device__island"></div>
         <div class="device__screen"><div class="device__loading" id="deviceLoading"><div style="display:grid;place-items:center"><i></i>Booting ${esc(p.name)}</div></div><iframe id="demoFrame" title="${esc(p.name)} live demo" src="${p.demo.url}" allow="clipboard-write" loading="eager"></iframe></div></div></div>
@@ -146,6 +154,7 @@
     const p = D.projects[current];
     demoHost.innerHTML = deviceMarkup(p);
     contentHost.innerHTML = contentMarkup(p);
+    $('.modal__inner').classList.toggle('is-wide', p.frame === 'browser');
     modal.classList.add('is-open');
     document.body.classList.add('no-scroll');
     if (window.lenis) window.lenis.stop();

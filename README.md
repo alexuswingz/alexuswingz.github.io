@@ -54,11 +54,11 @@ backend blanked out:
 
 | Demo | Source | How it runs without a server |
 |---|---|---|
-| `demos/cashnt` | `../Cashn't` | `?demo` seeds sample data and enters guest mode; sync API and Firebase are blanked |
-| `demos/studyverse` | `../Studyverse` | No `VITE_API_URL` → in-memory mocks + simulated live events |
-| `demos/proof` | `../AI Generation` | Generation is simulated; face retouch runs MediaPipe on-device |
-| `demos/jobfinder` | `../Job Finder/frontend` | `tools/shims/jobfinder-demo-shim.js` intercepts `fetch()` and answers the API from a sample dataset |
-| `demos/matteosbrew` | `../MatteosBrew` | Static client site (a clone of the GitHub repo with the base-path patch applied) |
+| `demos/cashnt` | `../Projects/Cashn't` | `?demo` seeds sample data and enters guest mode; sync API and Firebase are blanked |
+| `demos/studyverse` | `../Projects/Studyverse` | No `VITE_API_URL` → in-memory mocks + simulated live events |
+| `demos/proof` | `../Projects/Cinemi` | Generation is simulated; face retouch runs MediaPipe on-device |
+| `demos/jobfinder` | `../Projects/Job Finder/frontend` | `tools/shims/jobfinder-demo-shim.js` intercepts `fetch()` and answers the API from a sample dataset |
+| `demos/matteosbrew` | `../Projects/MatteosBrew` | Static client site (a clone of the GitHub repo with the base-path patch applied) |
 
 LOCA is linked to its live Railway deployment (it needs an account) and shown as a gallery. Ghostn't (App Store
 screenshots) and Alexus Legal AI (needs an OpenAI key + database) are galleries too. Proof is shown under its new name, Cinemi.

@@ -19,16 +19,16 @@ const desktop = resolve(site, '..');
 
 const demos = {
   cashnt: {
-    src: resolve(desktop, "Cashn't"),
+    src: resolve(desktop, 'Projects', "Cashn't"),
     env: { VITE_API_URL: '', VITE_FIREBASE_API_KEY: '', VITE_FIREBASE_AUTH_DOMAIN: '', VITE_FIREBASE_PROJECT_ID: '',
       VITE_FIREBASE_STORAGE_BUCKET: '', VITE_FIREBASE_MESSAGING_SENDER_ID: '', VITE_FIREBASE_APP_ID: '' },
   },
-  studyverse: { src: resolve(desktop, 'Studyverse'), env: { VITE_API_URL: '', VITE_REALTIME_URL: '' } },
-  proof: { src: resolve(desktop, 'AI Generation'), env: {} },
+  studyverse: { src: resolve(desktop, 'Projects', 'Studyverse'), env: { VITE_API_URL: '', VITE_REALTIME_URL: '' } },
+  proof: { src: resolve(desktop, 'Projects', 'Cinemi'), env: {} },
   // Static client site; the Desktop copy carries the base-path patch (BrowserRouter basename + asset paths).
-  matteosbrew: { src: resolve(desktop, 'MatteosBrew'), env: {} },
+  matteosbrew: { src: resolve(desktop, 'Projects', 'MatteosBrew'), env: {} },
   jobfinder: {
-    src: resolve(desktop, 'Job Finder', 'frontend'),
+    src: resolve(desktop, 'Projects', 'Job Finder', 'frontend'),
     env: { VITE_API_URL: '' },
     after(out) {
       copyFileSync(resolve(here, 'shims', 'jobfinder-demo-shim.js'), resolve(out, 'demo-shim.js'));

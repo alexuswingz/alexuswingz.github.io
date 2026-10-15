@@ -83,3 +83,15 @@ writeFileSync(resolve(site, 'llms.txt'), [
   '## FAQ', '', ...D.faq.map((f) => `- ${f.q} ${f.a}`), '',
 ].join('\n'));
 console.log('prerendered + jsonld + sitemap + robots + llms.txt');
+
+// ---------- 4. IndexNow (Bing, Yandex, DuckDuckGo, Naver; also feeds Copilot / ChatGPT search via Bing) ----------
+// Key file lives at the site root; run with --indexnow to notify search engines of every URL in the sitemap.
+if (process.argv.includes("--indexnow")) {
+  const { readdirSync } = await import("node:fs");
+  const keyFile = readdirSync(site).find((f) => /^[0-9a-f]{32}.txt$/.test(f));
+  if (!keyFile) throw new Error("no IndexNow key file at site root");
+  const key = keyFile.replace(".txt", "");
+  const body = { host: "alexuskarljoaquin.com", key, keyLocation: ORIGIN + "/" + keyFile, urlList: urls.map((u) => u.loc) };
+  const r = await fetch("https://api.indexnow.org/IndexNow", { method: "POST", headers: { "Content-Type": "application/json; charset=utf-8" }, body: JSON.stringify(body) });
+  console.log("IndexNow:", r.status, r.status === 200 || r.status === 202 ? "accepted" : await r.text());
+}

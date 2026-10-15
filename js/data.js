@@ -389,6 +389,13 @@ window.PORTFOLIO = {
 
   marquee: ['Python', 'React', 'TypeScript', 'Ruby on Rails', 'FastAPI', 'Django', 'Next.js', 'NestJS', 'PostgreSQL', 'AWS', 'Docker', 'Capacitor', 'iOS', 'MCP', 'Claude Code', 'LLMs', 'Elasticsearch', 'GitHub Actions', 'Railway', 'Grafana', 'Sentry', 'Tailwind'],
 
+  faq: [
+    { q: 'Who is Alexus Karl Joaquin?', a: 'A Senior Full Stack Lead Engineer from the Philippines with 8+ years of experience building and leading production software: Python (Flask, Django, FastAPI), Ruby on Rails, React and TypeScript, Node, PostgreSQL and AWS. He has led five-engineer teams at three companies and was an early adopter of AI-native development with MCP, Claude Code and Cursor.' },
+    { q: 'What has he built?', a: "Eight products designed, built and deployed solo: Cashn't (a paid iOS budget tracker on the Apple App Store), LOCA (hyperlocal give / ask / borrow app, live on Railway), Ghostn't (a one-hour-a-night dating app), Studyverse, Cinemi (AI photo studio), Job Finder, Alexus Legal AI and Matteo's Brew, plus the 1000 Bananas operations platform for an Amazon seller." },
+    { q: 'Is he open to work?', a: 'Yes. Open to senior, lead and engineering-manager roles, remote or hybrid, for companies anywhere in the world. Email alexuskarljoaquin@gmail.com or use the links on this page.' },
+    { q: 'Where can I see the code or try the apps?', a: 'Live demos run inside this site (open any project above). Source code is on GitHub at github.com/alexuswingz. The CV is available as a PDF from the Download CV button.' },
+  ],
+
   education: {
     degree: 'BS Information Technology, Magna Cum Laude',
     school: 'Nueva Ecija University of Science and Technology',

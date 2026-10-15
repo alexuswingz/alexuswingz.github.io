@@ -1,0 +1,40 @@
+# Alexus Karl Joaquin
+
+> Senior Full Stack Lead Engineer (Philippines, works remote-first). 8+ years of engineering, 4+ years leading five-engineer teams. Early adopter of AI-native development (MCP, Claude Code, Cursor). Published Cashn't, a paid iOS app, on the Apple App Store and shipped seven more products solo.
+
+Contact: alexuskarljoaquin@gmail.com · LinkedIn: https://www.linkedin.com/in/alexuskarljoaquin · GitHub: https://github.com/alexuswingz
+CV (PDF): https://alexuskarljoaquin.com/assets/Alexus_Karl_Joaquin_CV.pdf
+
+## Skills
+
+- Languages & Frameworks: Python, Flask, Django, FastAPI, Ruby on Rails, JavaScript, TypeScript, ReactJS, Next.js, Angular, Tailwind CSS
+- AI & Automation: LLM integration, Model Context Protocol (MCP), AI agents, Claude Code, Cursor AI, Prompt engineering, Workflow automation
+- Cloud & DevOps: AWS (EC2, S3, RDS, CloudFront, ELB), Docker, GitHub Actions, CI/CD, Railway, Caddy
+- Data & Observability: PostgreSQL, MySQL, MongoDB, Elasticsearch, Prisma, Grafana, Sentry
+- Mobile & Product: iOS development, Capacitor, App Store publishing & review, Product design, Design systems, Release management
+- Practices: Software architecture, System design, RESTful APIs, Performance optimization, Agile / Scrum, Technical documentation (Notion), Mentoring
+
+## Experience
+
+- Senior Full Stack Engineer, Cloud Employee (Apr 2025 — Present): Lead development of scalable production applications on Ruby on Rails, ReactJS and PostgreSQL, owning features end to end from schema and API design through frontend delivery and post-release monitoring.
+- Senior Full Stack Lead Engineer, Capital Source Group (Jan 2024 — Apr 2025): Trusted to design, build and launch the company's core Financing System entirely from scratch. A system processing real financial transactions where correctness and uptime directly affect the business.
+- Senior Full Stack Lead Engineer, Vertere Global Solutions (May 2021 — Jan 2024): Spearheaded full-stack development of financing systems over a nearly three-year tenure, carrying products through multiple major iterations while keeping them stable in production.
+- Software Engineer, FurtherEdge Co. (May 2018 — Jan 2021): Recruited on the strength of freelance work delivered while still a second-year college student: client-facing web applications with Angular frontends and Python backends, shipped to real users on real deadlines.
+
+## Products (all built solo, zero to deployment)
+
+- [Cashn't](https://alexuskarljoaquin.com/p/cashnt/): A budget tracker that gives you one honest number: what is safe to spend today. With an AI money coach built from your real numbers. Stack: React 19, TypeScript, Vite, Capacitor 8, Firebase Auth, Express, PostgreSQL, Railway, Recharts, PWA, Xcode / App Store Connect.
+- [LOCA](https://alexuskarljoaquin.com/p/loca/): Your stuff. Your people. Nearby. Neighbors give things away, ask for things, borrow things and offer help. Stack: React, Vite, NestJS, Prisma, PostgreSQL 18, Capacitor (iOS), Firebase sign-in, APNs push, S3 media, Apple Maps, OpenAI moderation, Resend, Caddy, Railway.
+- [Studyverse](https://alexuskarljoaquin.com/p/studyverse/): Your school life, all in one place. Schedules, reviewers, flashcards and a class community for Filipino students, with AI that turns photos into timetables and notes into reviewers. Stack: React 19, TypeScript (strict), Vite 8, Tailwind CSS 4, React Router 7, Zustand, Motion, Capacitor 8, Node API, PostgreSQL, WebSockets, OpenAI, Railway.
+- [Cinemi](https://alexuskarljoaquin.com/p/proof/): A mobile-first AI image studio driven by photography slash-commands. Pick a photo, type /85mm or /filmgrain, compare before and after, retouch faces on-device. Stack: React 19, TypeScript 6, Vite 8, Tailwind CSS 4, Radix UI, CVA, MediaPipe (WASM), shadcn/ui, Capacitor-ready.
+- [Ghostn't](https://alexuskarljoaquin.com/p/ghostnt/): The dating app where ghosting is impossible. One hour a night, answers before faces, then you both choose: hold or cut. Stack: React 19, TypeScript, Vite, Capacitor 8, Express 5, PostgreSQL, WebSockets, Firebase Auth, CallKit (Swift), Railway, App Store Connect.
+- [Matteo's Brew](https://alexuskarljoaquin.com/p/matteosbrew/): A warm, motion-rich website for a neighbourhood coffee shop, with a searchable digital menu customers open from a QR code at the counter. Stack: React 19, Vite 7, Tailwind CSS 4, Framer Motion, React Router 7, QR codes, Static hosting.
+- [Job Finder](https://alexuskarljoaquin.com/p/jobfinder/): One feed that aggregates LinkedIn, Indeed, JobStreet and Google Jobs, scores every listing against your CV and explains why it matched. Stack: Python, FastAPI, httpx, SQLite / PostgreSQL, React, TypeScript, Tailwind CSS 4, TanStack Query, Capacitor-ready, Railway.
+- [Alexus Legal AI](https://alexuskarljoaquin.com/p/lawsystem/): A warm, conversational AI legal companion for Filipinos: explains Philippine law in plain language, relates it to your situation and ends with concrete next steps. Stack: Next.js 14, TypeScript, Tailwind CSS, OpenAI GPT-4o-mini, PostgreSQL, PWA, Railway.
+
+## FAQ
+
+- Who is Alexus Karl Joaquin? A Senior Full Stack Lead Engineer from the Philippines with 8+ years of experience building and leading production software: Python (Flask, Django, FastAPI), Ruby on Rails, React and TypeScript, Node, PostgreSQL and AWS. He has led five-engineer teams at three companies and was an early adopter of AI-native development with MCP, Claude Code and Cursor.
+- What has he built? Eight products designed, built and deployed solo: Cashn't (a paid iOS budget tracker on the Apple App Store), LOCA (hyperlocal give / ask / borrow app, live on Railway), Ghostn't (a one-hour-a-night dating app), Studyverse, Cinemi (AI photo studio), Job Finder, Alexus Legal AI and Matteo's Brew, plus the 1000 Bananas operations platform for an Amazon seller.
+- Is he open to work? Yes. Open to senior, lead and engineering-manager roles, remote or hybrid, for companies anywhere in the world. Email alexuskarljoaquin@gmail.com or use the links on this page.
+- Where can I see the code or try the apps? Live demos run inside this site (open any project above). Source code is on GitHub at github.com/alexuswingz. The CV is available as a PDF from the Download CV button.

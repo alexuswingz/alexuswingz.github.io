@@ -37,6 +37,7 @@
       <article class="card reveal"><div class="card__icon">${ICONS[c.icon]}</div><h3>${esc(c.title)}</h3><p>${esc(c.body)}</p></article>`).join('');
   }
   function renderExperience() {
+    $('#timeline .job').forEach((j) => j.remove());
     $('#timeline').insertAdjacentHTML('beforeend', D.experience.map((j) => `
       <article class="job">
         <div class="job__meta"><div class="job__period">${esc(j.period)}</div><div class="job__company">${esc(j.company)}</div><div class="job__role">${esc(j.role)}</div></div>
@@ -76,6 +77,10 @@
         </div>
       </article>`;
     }).join('');
+  }
+  function renderFaq() {
+    const host = $('#faqList'); if (!host || !D.faq) return;
+    host.innerHTML = D.faq.map((f) => `<div class="panel reveal"><h3 style="font-size:20px;margin:0 0 8px">${esc(f.q)}</h3><p>${esc(f.a)}</p></div>`).join('');
   }
   function renderSkills() {
     $('#rings').innerHTML = D.skillRings.map((r) => `
@@ -524,7 +529,7 @@
   }
 
   /* ---------------- boot ---------------- */
-  renderStats(); renderMarquee(); renderWhyHire(); renderExperience(); renderProjects(); renderSkills();
+  renderStats(); renderMarquee(); renderWhyHire(); renderExperience(); renderProjects(); renderSkills(); renderFaq();
   $('#year').textContent = new Date().getFullYear();
   $('#projectsGrid').addEventListener('click', (e) => { const c = e.target.closest('.project'); if (c) openProject(D.projects.findIndex((p) => p.id === c.dataset.project)); });
   $('#projectsGrid').addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { const c = e.target.closest('.project'); if (c) { e.preventDefault(); openProject(D.projects.findIndex((p) => p.id === c.dataset.project)); } } });

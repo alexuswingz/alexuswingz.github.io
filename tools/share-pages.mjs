@@ -53,20 +53,44 @@ ${p.frame === 'browser'
 
 const page = (p) => {
   const url = `https://alexuskarljoaquin.com/p/${p.id}/`;
-  const target = `/#project-${p.id}`;
+  const links = [];
+  if (live[p.id]) links.push({ href: live[p.id], label: p.id === 'cashnt' ? 'View on the App Store' : 'Open the live app', primary: true });
+  links.push({ href: `/#project-${p.id}`, label: p.demo.kind === 'embed' ? 'Try the live demo in the portfolio' : 'See it in the portfolio', primary: !live[p.id] });
+  if (p.repoPublic && p.repo) links.push({ href: p.repo, label: 'Source code on GitHub' });
+  const ld = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: p.name, url, description: p.summary, image: `https://alexuskarljoaquin.com/assets/og/${p.id}.png`,
+    applicationCategory: p.id === 'cashnt' ? 'FinanceApplication' : 'MobileApplication', author: { '@type': 'Person', name: 'Alexus Karl Joaquin', url: 'https://alexuskarljoaquin.com' } };
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(p.name)} — ${esc(p.kicker)}</title>
-<meta name="description" content="${esc(p.summary)}">
-<link rel="canonical" href="${url}">
+<title>${esc(p.name)} — ${esc(p.kicker)} | Alexus Karl Joaquin</title>
+<meta name="description" content="${esc(p.summary)} Designed, built and deployed solo by Alexus Karl Joaquin.">
+<link rel="canonical" href="${url}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website"><meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(p.name)} — ${esc(p.kicker)}">
 <meta property="og:description" content="${esc(p.summary)} Built solo by Alexus Karl Joaquin.">
 <meta property="og:image" content="https://alexuskarljoaquin.com/assets/og/${p.id}.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(p.name)}"><meta name="twitter:image" content="https://alexuskarljoaquin.com/assets/og/${p.id}.png">
-<script>location.replace(${JSON.stringify(target)});</script>
-<style>body{background:#0b0d0c;color:#a6b0a8;font-family:system-ui;display:grid;place-items:center;height:100vh;margin:0}a{color:#3ee39a}</style>
-</head><body><p>Opening ${esc(p.name)}… <a href="${target}">continue</a>${live[p.id] ? ` · <a href="${live[p.id]}">open the live app</a>` : ''}</p></body></html>`;
+<script type="application/ld+json">${JSON.stringify(ld)}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/motion.css">
+<style>.pp{padding:110px 0 80px}.pp .hero-img{width:100%;border-radius:20px;border:1px solid var(--line-strong);margin:28px 0}.pp h1{font-size:clamp(40px,6vw,72px)}.pp .lead{font-size:19px;color:var(--text-dim);max-width:70ch;margin-top:14px}.pp .btns{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 40px}.pp h2{font-size:22px;margin:36px 0 12px}.pp .shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}.pp .shots img{width:100%;border-radius:14px;border:1px solid var(--line)}.pp .reveal{opacity:1;transform:none}</style>
+</head><body>
+<header class="header is-scrolled"><div class="container"><a href="/" class="brand"><span class="brand__word"><span class="brand__first">Alexus</span><span class="brand__last">Joaquin</span></span><span class="brand__dot"></span></a><nav class="nav"><a href="/#projects">Projects</a><a href="/#experience">Experience</a><a href="/#contact">Contact</a></nav><div class="header__actions"><a class="btn btn--sm" href="/assets/Alexus_Karl_Joaquin_CV.pdf">Download CV</a></div></div></header>
+<main class="pp"><div class="container">
+  <div class="mono" style="color:${p.accent}">${esc(p.kicker)}</div>
+  <h1 class="section__title" style="margin-top:10px"><img src="/${p.icon}" alt="" style="display:inline-block;width:.9em;height:.9em;border-radius:.2em;vertical-align:-.08em;margin-right:.2em">${esc(p.name)}</h1>
+  <p class="lead">${esc(p.summary)}</p>
+  <p class="lead" style="font-size:15px">${esc(p.role)} · ${esc(p.year)} · Designed, built and deployed by <a href="/" style="color:var(--accent)">Alexus Karl Joaquin</a>.</p>
+  <div class="btns">${links.map((l) => `<a class="btn ${l.primary ? 'btn--primary' : ''}" href="${l.href}">${esc(l.label)}</a>`).join('')}</div>
+  <img class="hero-img" src="/assets/og/${p.id}.png" alt="${esc(p.name)} overview">
+  <div class="facts">${p.facts.map(([k, v]) => `<div class="fact"><div class="mono">${esc(k)}</div><strong>${esc(v)}</strong></div>`).join('')}</div>
+  <h2>What I built</h2><ul class="highlights">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
+  <h2>Skills demonstrated</h2><ul class="skills-list">${(p.skills || p.stack).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
+  <h2>Stack</h2><div class="job__stack" style="margin-top:0">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join('')}</div>
+  ${p.gallery.length ? `<h2>Screens</h2><div class="shots">${p.gallery.map((g) => `<img loading="lazy" src="/${g}" alt="${esc(p.name)} screenshot">`).join('')}</div>` : ''}
+  <h2>More</h2><p class="lead" style="font-size:16px"><a href="/#projects" style="color:var(--accent)">All projects</a> · <a href="/#experience" style="color:var(--accent)">Experience</a> · <a href="https://www.linkedin.com/in/alexuskarljoaquin" style="color:var(--accent)">LinkedIn</a> · <a href="https://github.com/alexuswingz" style="color:var(--accent)">GitHub</a></p>
+</div></main>
+<footer class="footer"><div class="container"><span>© ${new Date().getFullYear()} Alexus Karl Joaquin</span><span><a href="/">alexuskarljoaquin.com</a></span></div></footer>
+</body></html>`;
 };
 
 const browser = await chromium.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true });

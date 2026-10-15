@@ -37,7 +37,7 @@
       <article class="card reveal"><div class="card__icon">${ICONS[c.icon]}</div><h3>${esc(c.title)}</h3><p>${esc(c.body)}</p></article>`).join('');
   }
   function renderExperience() {
-    $('#timeline .job').forEach((j) => j.remove());
+    $$('#timeline .job').forEach((j) => j.remove());
     $('#timeline').insertAdjacentHTML('beforeend', D.experience.map((j) => `
       <article class="job">
         <div class="job__meta"><div class="job__period">${esc(j.period)}</div><div class="job__company">${esc(j.company)}</div><div class="job__role">${esc(j.role)}</div></div>

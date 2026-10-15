@@ -69,6 +69,14 @@ Three one-line changes were made in the source projects so they can run under a 
 Job Finder `frontend/src/main.tsx` (`BrowserRouter basename`), Proof `src/lib/router.ts`, `src/data/photos.ts`
 and `src/lib/face-retouch.ts` (asset / route base), and Studyverse `Logo.tsx` (logo path).
 
+## SEO / answer-engine build
+
+`node tools/seo.mjs` (with the local preview running on :4600) prerenders the JS-rendered sections into index.html,
+writes the JSON-LD (Person, WebSite, ProfilePage, SoftwareApplication list, FAQPage), and regenerates sitemap.xml,
+robots.txt and llms.txt. `node tools/share-pages.mjs` rebuilds the static project pages under p/<id>/ and their
+Open Graph cards in assets/og/. Run both after changing js/data.js, then `node tools/seo.mjs --indexnow` once the
+site is deployed to notify Bing/IndexNow. Google needs Search Console (see README section in the chat history).
+
 ## Credits
 
 GSAP + ScrollTrigger (cdnjs), Lenis smooth scroll, Google Fonts (Inter Tight, Inter, JetBrains Mono).

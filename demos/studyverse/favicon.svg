@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Studyverse">
+  <style>.sv-fav{color:#7C3AED}@media (prefers-color-scheme:dark){.sv-fav{color:#A78BFA}}</style>
+  <g class="sv-fav"><g transform="translate(0 0) scale(1)">
+    <g transform="translate(32 32) rotate(-27)">
+    <ellipse rx="28.5" ry="9.25" fill="none" stroke="currentColor" stroke-width="5.625"/>
+    <path d="M 15.032 3.78 A 15.5 15.5 0 1 0 -15.032 3.78 A 24.087 4.838 0 0 0 15.032 3.78 Z M 8.046 13.248 A 15.5 15.5 0 0 1 -8.046 13.248 A 32.913 13.662 0 0 0 8.046 13.248 Z" fill="currentColor"/>
+    <path d="M 14.881 7.889 A 28.5 9.25 0 0 1 -14.881 7.889" fill="none" stroke="currentColor" stroke-width="5.625"/>
+    <circle cx="-27.877" cy="1.923" r="4.4" fill="currentColor"/>
+    </g>
+    </g></g>
+</svg>

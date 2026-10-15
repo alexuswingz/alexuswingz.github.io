@@ -1,0 +1,90 @@
+/* ==================================================================
+   HERO STAGE — floating product stack with mouse parallax
+   ================================================================== */
+.stage { position: relative; aspect-ratio: 4 / 4.6; max-width: 520px; width: 100%; margin-inline: auto; perspective: 1400px; transform-style: preserve-3d; }
+.stage > * { will-change: transform; }
+.stage__orb { position: absolute; left: 50%; top: 44%; width: 78%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(62,227,154,0.32), rgba(62,227,154,0.06) 55%, transparent 72%); filter: blur(28px); animation: breathe 6s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: .85; } 50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; } }
+.stage__ring { position: absolute; left: 50%; top: 44%; width: 92%; aspect-ratio: 1; margin: 0; transform: translate(-50%, -50%); border-radius: 50%; padding: 1.5px;
+  background: conic-gradient(from 0deg, transparent 0 55%, rgba(62,227,154,0) 60%, var(--accent) 82%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: ringspin 9s linear infinite; opacity: .9; }
+.stage__ring--2 { width: 70%; animation-duration: 15s; animation-direction: reverse; opacity: .45; }
+@keyframes ringspin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.stage__grid { position: absolute; inset: 0; border-radius: 32px; background-image: linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 40px 40px; -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent 100%); mask-image: radial-gradient(closest-side, #000 30%, transparent 100%); }
+
+.stage__phone { position: absolute; aspect-ratio: 390 / 844; border-radius: 34px; background: #050605; padding: 7px; box-shadow: 0 40px 80px rgba(0,0,0,0.65), inset 0 0 0 1px rgba(255,255,255,0.16), inset 0 0 0 3px #0b0c0b; overflow: hidden; transform-style: preserve-3d; }
+.stage__phone::before { content: ''; position: absolute; left: 50%; top: 15px; transform: translateX(-50%); width: 34%; height: 18px; border-radius: 999px; background: #000; z-index: 2; }
+.stage__phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 27px; }
+.stage__phone--a { width: 48%; left: 26%; top: 9%; z-index: 4; }
+.stage__phone--b { width: 42%; left: -2%; top: 20%; z-index: 2; transform: rotate(-11deg); filter: brightness(.78) saturate(.9); }
+.stage__phone--c { width: 42%; right: -2%; top: 16%; z-index: 2; transform: rotate(10deg); filter: brightness(.78) saturate(.9); }
+.stage__shine { position: absolute; inset: 0; border-radius: 34px; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.14) 45%, transparent 60%); background-size: 250% 100%; animation: shine 6s ease-in-out infinite; pointer-events: none; z-index: 3; }
+@keyframes shine { 0%, 65% { background-position: 120% 0; } 100% { background-position: -80% 0; } }
+
+.stage__photo { position: absolute; left: 4%; bottom: 10%; width: 36%; aspect-ratio: 4 / 5; z-index: 5; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.6); transform: rotate(-6deg); background: var(--bg-3); }
+.stage__photo img { width: 100%; height: 100%; object-fit: cover; }
+.stage__photo span { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 10px; font-size: 11px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; }
+
+.stage__chip { position: absolute; z-index: 6; display: flex; align-items: center; gap: 10px; padding: 10px 14px 10px 10px; border-radius: 14px; background: rgba(14,18,16,0.82); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); font-size: 12px; color: var(--text-dim); white-space: nowrap; }
+.stage__chip strong { display: block; color: var(--text); font-family: var(--font-display); font-size: 13.5px; letter-spacing: -0.01em; }
+.stage__chip img { width: 30px; height: 30px; border-radius: 8px; }
+.stage__chip-ico { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: rgba(62,227,154,0.14); color: var(--accent); font-size: 14px; }
+.stage__chip--store { left: 2%; top: 4%; }
+.stage__chip--teams { right: 0; top: 50%; }
+.stage__chip--ai { right: 6%; top: 2%; }
+
+.stage__log { position: absolute; left: 10%; right: 10%; bottom: 2%; z-index: 7; border-radius: 14px; background: rgba(8,10,9,0.9); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 30px 60px rgba(0,0,0,0.6); overflow: hidden; }
+.stage__log-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-faint); }
+.stage__log-bar i { width: 8px; height: 8px; border-radius: 50%; background: #3a423c; }
+.stage__log-bar i:nth-child(1) { background: #ff6b6b; } .stage__log-bar i:nth-child(2) { background: #efcf6e; } .stage__log-bar i:nth-child(3) { background: var(--accent); }
+.stage__log-bar span { margin-left: auto; }
+.stage__log pre { margin: 0; padding: 10px 12px 12px; font-family: var(--font-mono); font-size: 11.5px; line-height: 1.6; color: var(--text-dim); min-height: 64px; white-space: pre-wrap; }
+.stage__log pre .ok { color: var(--accent); } .stage__log pre .cmd { color: var(--text); }
+.stage__log pre .caret { display: inline-block; width: 7px; height: 13px; background: var(--accent); vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.stage__tag { position: absolute; left: 50%; top: -10px; transform: translateX(-50%); z-index: 8; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 600; box-shadow: 0 10px 30px rgba(62,227,154,0.35); white-space: nowrap; }
+@media (max-width: 999px) { .stage { max-width: 420px; } .stage__chip { font-size: 11px; } .stage__chip strong { font-size: 12.5px; } .stage__chip--teams { right: -2%; } }
+
+/* ==================================================================
+   CURSOR — lerped dot + ring with contextual states
+   ================================================================== */
+body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor [role="button"] { cursor: none; }
+.cursor, .cursor-ring { position: fixed; left: 0; top: 0; z-index: 95; pointer-events: none; opacity: 0; transition: opacity .3s; }
+body.has-cursor .cursor, body.has-cursor .cursor-ring { opacity: 1; }
+.cursor { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(62,227,154,0.8); }
+.cursor-ring { width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; border: 1.5px solid rgba(62,227,154,0.75); display: grid; place-items: center; transition: width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background .3s, border-color .3s, opacity .3s, border-radius .3s; }
+.cursor-ring__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; opacity: 0; transform: scale(.6); transition: opacity .25s, transform .3s var(--ease); white-space: nowrap; }
+.cursor-ring.is-hover { width: 56px; height: 56px; margin: -28px 0 0 -28px; background: rgba(62,227,154,0.12); border-color: var(--accent); }
+.cursor-ring.is-view { width: 88px; height: 88px; margin: -44px 0 0 -44px; background: var(--accent); border-color: var(--accent); }
+.cursor-ring.is-view .cursor-ring__label { opacity: 1; transform: scale(1); }
+.cursor.is-view { opacity: 0; }
+.cursor-ring.is-text { width: 4px; height: 28px; margin: -14px 0 0 -2px; border-radius: 2px; background: var(--accent); border-color: transparent; }
+.cursor.is-hidden, .cursor-ring.is-hidden { opacity: 0 !important; }
+@media (hover: none), (pointer: coarse), (max-width: 900px) { .cursor, .cursor-ring { display: none; } body.has-cursor, body.has-cursor a, body.has-cursor button { cursor: auto; } }
+
+/* progress bar */
+.progress { position: fixed; left: 0; top: 0; height: 2px; width: 100%; z-index: 60; background: linear-gradient(90deg, var(--accent), #1f9f68); transform-origin: left; transform: scaleX(0); }
+
+/* ==================================================================
+   SECTION CHOREOGRAPHY HELPERS
+   ================================================================== */
+.w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .08em; margin-bottom: -.08em; }
+.w > span { display: inline-block; will-change: transform; }
+.about__text .w { overflow: visible; }
+.section__title .w > span { transform: translateY(110%); }
+.no-js .section__title .w > span, .reduced .section__title .w > span { transform: none; }
+.job__company { position: relative; display: inline-block; }
+.job__company::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 100%; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.job.is-active .job__company::after { transform: scaleX(1); }
+.project { transform-style: preserve-3d; }
+.project__glare { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(500px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.08), transparent 45%); opacity: 0; transition: opacity .3s; }
+.project:hover .project__glare { opacity: 1; }
+.contact__email { position: relative; border-bottom: 0; padding-bottom: 6px; }
+.contact__email::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .9s var(--ease); }
+.contact__email.is-drawn::after { transform: scaleX(1); }
+.nav a { position: relative; }
+.nav a::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: 6px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav a:hover::after, .nav a.is-active::after { transform: scaleX(1); }
+
+/* elements handed back to CSS after their entrance tween */
+.reveal.is-in { opacity: 1; transform: none; }

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta name="theme-color" content="#FAFAFC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101018" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content="Studyverse — your school life, all in one place." />
+    <link rel="icon" type="image/svg+xml" href="/demos/studyverse/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/demos/studyverse/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/demos/studyverse/apple-touch-icon.png" />
+    <title>Studyverse</title>
+    <script>
+      // Apply the stored theme before first paint to avoid a light→dark flash.
+      try {
+        var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('sv.theme');
+        var dark = t === 'dark' || ((!t || t === 'system') && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/demos/studyverse/assets/index-CelMdIvb.js"></script>
+    <link rel="modulepreload" crossorigin href="/demos/studyverse/assets/design-system-BDdgz9s-.js">
+    <link rel="stylesheet" crossorigin href="/demos/studyverse/assets/index-CFtefbFJ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

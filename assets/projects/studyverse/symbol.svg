@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Studyverse">
+  <g transform="translate(0 0) scale(1)">
+    <defs><linearGradient id="sv0-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#6D28D9"/></linearGradient></defs>
+    <g transform="translate(32 32) rotate(-27)">
+    <ellipse rx="28.5" ry="9.25" fill="none" stroke="#3B82F6" stroke-width="4.5"/>
+    <path d="M 14.891 4.303 A 15.5 15.5 0 1 0 -14.891 4.303 A 24.65 5.4 0 0 0 14.891 4.303 Z M 9.061 12.576 A 15.5 15.5 0 0 1 -9.061 12.576 A 32.35 13.1 0 0 0 9.061 12.576 Z" fill="url(#sv0-grad)"/>
+    <path d="M 14.881 7.889 A 28.5 9.25 0 0 1 -14.881 7.889" fill="none" stroke="#3B82F6" stroke-width="4.5"/>
+    <circle cx="-27.877" cy="1.923" r="4.4" fill="#06B6D4"/>
+    </g>
+    </g>
+</svg>

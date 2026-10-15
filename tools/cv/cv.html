@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Alexus Karl Joaquin — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 12mm 13mm 12mm 13mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Lato', 'Segoe UI', Arial, sans-serif; font-size: 9.25pt; line-height: 1.27; color: #1c1c1c; }
+  a { color: #1a5fb4; text-decoration: none; }
+  .name { text-align: center; font-size: 21pt; font-weight: 700; letter-spacing: 0.06em; color: #1f3b5a; margin: 0; }
+  .title { text-align: center; font-size: 10.5pt; color: #444; margin: 3px 0 0; }
+  .contact { text-align: center; font-size: 9pt; color: #444; margin: 3px 0 0; }
+  .contact span + span::before { content: '  ·  '; color: #999; }
+  h2 { font-size: 10.2pt; font-weight: 700; letter-spacing: 0.1em; color: #1f3b5a; text-transform: uppercase; border-bottom: 1.2px solid #1f3b5a; padding-bottom: 2px; margin: 9px 0 4px; }
+  p { margin: 0 0 4px; }
+  ul { margin: 2px 0 4px; padding-left: 14px; }
+  li { margin: 0 0 1.6px; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 5px; }
+  .row .l { font-weight: 700; }
+  .row .l span { font-weight: 400; color: #555; }
+  .row .r { font-style: italic; color: #555; white-space: nowrap; font-size: 9pt; }
+  .sub { font-style: italic; color: #555; font-size: 9pt; margin: 0 0 2px; }
+  .proj { margin-top: 4px; }
+  .proj .l { font-weight: 700; }
+  .proj .l span { font-weight: 400; color: #555; }
+  .skills p { margin: 0 0 2.5px; }
+  .skills b { color: #1f3b5a; }
+  h2, .row, .proj .l { break-after: avoid; }
+  li, .proj { break-inside: avoid; }
+  h2.pb { break-before: page; margin-top: 0; }
+  .note { font-size: 8.8pt; color: #555; margin: 2px 0 0; }
+</style>
+</head>
+<body>
+  <h1 class="name">ALEXUS KARL JOAQUIN</h1>
+  <p class="title">Senior Full Stack Lead Engineer · AI-Native Development · Published iOS App Developer</p>
+  <p class="contact"><span>+63 930 623 6460</span><span>alexuskarljoaquin@gmail.com</span><span><a href="https://alexuskarljoaquin.com">alexuskarljoaquin.com</a> (portfolio with live app demos)</span></p>
+
+  <h2>Profile</h2>
+  <p>Senior Full Stack Lead Engineer with 8 years of experience taking complex platforms from blank page to production — and 4+ years leading engineering teams while staying deeply hands-on. One of the earliest adopters of AI-native development in his organizations: introduced Model Context Protocol (MCP), Claude Code, and Cursor AI company-wide and retrained entire teams around AI-powered workflows, fundamentally changing how software gets shipped. Designed, built, and launched a commercial iOS finance app — Cashn't — solo, from product design through App Store release, and has since shipped a portfolio of seven more products end to end.</p>
+
+  <h2>Why Hire Me</h2>
+  <ul>
+    <li><b>Full product ownership, proven publicly.</b> Shipped Cashn't, a paid budget-tracking app live on the Apple App Store, built entirely solo: product design, AI coach, backend API, security, privacy compliance, and App Store review — the complete lifecycle most engineers never touch. Every project below can be tried live at alexuskarljoaquin.com.</li>
+    <li><b>AI transformation leader, not just user.</b> Introduced MCP, Claude Code, and Cursor AI to entire engineering organizations, wrote the adoption standards, and trained the engineers. Companies hiring for AI-readiness get someone who has already led that transition twice.</li>
+    <li><b>Builds from zero, at production quality.</b> Twice trusted to architect financing platforms from scratch — systems handling real money, where reliability isn't optional — and delivered them with high-availability AWS infrastructure, observability, and automated pipelines.</li>
+    <li><b>Multiplies teams.</b> Led and mentored 5-engineer teams at three consecutive companies, running disciplined Agile delivery while raising the technical bar through code review, documentation culture, and hands-on coaching.</li>
+  </ul>
+
+  <h2>Selected Projects — Built Solo, Zero to Deployment</h2>
+  <div class="row"><div class="l">Cashn't — Budget Tracker <span>| Founder, Sole Engineer &amp; Designer</span></div><div class="r">2026 – Present</div></div>
+  <p class="sub">Paid iOS finance app, live on the Apple App Store — apps.apple.com/app/id6789244062 · React 19, TypeScript, Capacitor, Express + PostgreSQL on Railway, Firebase Auth</p>
+  <ul>
+    <li>A "safe to spend today" engine that computes one honest daily number from balances, bills, paydays, and savings goals; net worth across cash, banks, e-wallets (GCash, Maya), investments, and crypto; trip envelopes and group pots with automatic who-owes-who settlement.</li>
+    <li>Built an AI money coach into the product — plain-language questions answered with plans generated from the user's actual data — practical, production LLM integration.</li>
+    <li>Privacy as a feature: local-first guest mode, Face ID lock, privacy masking, in-app account deletion, published privacy policy — passed App Store review on the first submission; v1.1 shipped within days of launch. Runs the entire product operation: ASO, release management, pricing, roadmap.</li>
+  </ul>
+  <div class="proj"><div class="l">LOCA — hyperlocal give / ask / borrow / help app <span>· React, NestJS + Prisma, PostgreSQL, Capacitor iOS, Firebase sign-in, APNs push, S3, Railway</span></div>
+    <ul><li>34-table schema, end-to-end auth (email, Google, Apple), two-sided borrow handoffs, messaging with live SSE feed, rules-based matching, English/Tagalog + OpenAI moderation, 17 e2e suites, hardened deployment (CSP, HSTS, rate limits). Live on Railway.</li></ul></div>
+  <div class="proj"><div class="l">Ghostn't — dating app that's open one hour a night <span>· React, Capacitor, Express 5, PostgreSQL, WebSockets, CallKit</span></div>
+    <ul><li>Answers-before-faces matching with a three-night reveal ladder; WebSocket live chat with server-authoritative countdowns; single-round-trip endpoints, keyset pagination, advisory locks; route-level code splitting. API live on Railway, iOS build in App Store review.</li></ul></div>
+  <div class="proj"><div class="l">Studyverse — student productivity &amp; social learning <span>· React 19, TypeScript, Tailwind 4, Node + PostgreSQL, WebSockets, OpenAI, Capacitor</span></div>
+    <ul><li>Brand and design system built from a scripted SVG pipeline (WCAG AA); AI turns timetable photos into schedules and notes into reviewers with flashcard decks; SWR cache + realtime client so no screen ever shows a skeleton.</li></ul></div>
+  <div class="proj"><div class="l">Cinemi — AI photo studio <span>· React 19, TypeScript, Tailwind 4, Radix, MediaPipe (WASM)</span></div>
+    <ul><li>Token-driven design system whose reference page reads values live from CSS; slash-command prompt composer, before/after compare, on-device face retouching that never uploads photos; monetization components (credits, rewarded ads).</li></ul></div>
+  <div class="proj"><div class="l">Job Finder <span>· FastAPI, httpx, PostgreSQL, React, TanStack Query</span> &nbsp;&amp;&nbsp; Alexus Legal AI <span>· Next.js 14, OpenAI, PostgreSQL, PWA</span></div>
+    <ul><li>Job Finder aggregates LinkedIn, Indeed, JobStreet and Google Jobs with free direct scrapers and RapidAPI fallbacks, dedupes and caches, and scores every listing 0–100 against a CV. Alexus Legal AI is a streaming, empathetic legal companion for Philippine law with persisted conversations and document-image analysis.</li></ul></div>
+
+  <h2 class="pb">Work Experience</h2>
+  <div class="row"><div class="l">Senior Full Stack Engineer <span>| Cloud Employee</span></div><div class="r">Apr 2025 – Present</div></div>
+  <ul>
+    <li>Lead development of scalable production applications on Ruby on Rails, ReactJS, and PostgreSQL — owning features end to end from database schema and API design through frontend delivery and post-release monitoring.</li>
+    <li>Pioneered the company's shift to AI-native engineering: introduced Model Context Protocol (MCP) integrations that connect AI assistants directly to internal tools and data sources, turning AI from a chat toy into a working part of the development pipeline.</li>
+    <li>Spearheaded company-wide rollout of Claude Code and Cursor AI — evaluated the tools, made the business case, wrote the usage standards, and personally trained engineers — resulting in visibly faster feature delivery and a team that now builds AI-first by default.</li>
+    <li>Authored the organization's AI-assisted development standards and best practices: prompt patterns, code-review rules for AI-generated code, and guardrails that let the team move fast without sacrificing quality.</li>
+    <li>Designed and implemented the observability stack with Grafana dashboards and Sentry error tracking — production issues are now caught by alerts, not by customers. Built and maintain the engineering knowledge base in Notion (onboarding guides, architecture decisions, runbooks).</li>
+      </ul>
+  <div class="row"><div class="l">Senior Full Stack Lead Engineer <span>| Capital Source Group</span></div><div class="r">Jan 2024 – Apr 2025</div></div>
+  <ul>
+    <li>Trusted to design, build, and launch the company's core Financing System entirely from scratch — a system processing real financial transactions where correctness and uptime directly affect the business — using Python (Flask, Alembic) on the backend and ReactJS on the frontend.</li>
+    <li>Architected the full AWS production environment: RDS for transactional data, Elasticsearch for fast search across financial records, and load balancers for high availability — a resilient architecture built to survive traffic spikes and component failures.</li>
+    <li>Engineered Selenium-based web scrapers that automated data collection previously done by hand, removing a manual bottleneck and feeding the platform with fresh, reliable data around the clock.</li>
+    <li>Owned the delivery pipeline end to end: CI/CD via GitHub Actions, frontend distribution through S3 + CloudFront, and domain management — one engineer accountable for the entire path from commit to customer.</li>
+    <li>Led a team of 5 engineers in a daily-sprint Agile/Scrum environment: ran plannings and retros, unblocked engineers daily, reviewed every significant change, and kept a from-scratch build shipping on schedule.</li>
+  </ul>
+  <div class="row"><div class="l">Senior Full Stack Lead Engineer <span>| Vertere Global Solutions</span></div><div class="r">May 2021 – Jan 2024</div></div>
+  <ul>
+    <li>Spearheaded full-stack development of financing systems over a nearly three-year tenure — Python (Flask, Alembic) backends and ReactJS frontends — carrying products through multiple major iterations while keeping them stable in production.</li>
+    <li>Fully integrated the AWS stack — Elasticsearch, RDS, load balancers, S3, and CloudFront — designing for both performance and fault tolerance so the platform stayed responsive as usage grew.</li>
+    <li>Implemented Selenium-based data pipelines and stood up CI/CD on GitHub Actions, replacing risky manual deployments with repeatable, automated releases; owned end-to-end system stability — monitoring, tuning, and hardening.</li>
+    <li>Led and mentored a 5-member engineering team, instilling Agile/Scrum discipline with daily sprints and growing junior engineers into confident, independent contributors.</li>
+  </ul>
+  <div class="row"><div class="l">Software Engineer <span>| FurtherEdge Co.</span></div><div class="r">May 2018 – Jan 2021</div></div>
+  <ul>
+    <li>Recruited on the strength of freelance work delivered while still a second-year college student — client-facing web applications built with Angular frontends and Python backends, shipped to real users on real deadlines.</li>
+    <li>Designed and built RESTful APIs, database-backed features, and user-friendly interfaces across a wide variety of client projects; deployed and hosted production applications on AWS (S3, EC2, RDS).</li>
+    <li>Contributed to larger-scale team projects in a structured professional environment — all while completing a BS in Information Technology, graduating Magna Cum Laude.</li>
+  </ul>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <p><b>Languages &amp; Frameworks:</b> Python (Flask, Django, FastAPI), Ruby on Rails, JavaScript/TypeScript, ReactJS, Next.js, NestJS, Angular, Tailwind CSS</p>
+    <p><b>AI &amp; Automation:</b> LLM Integration, Model Context Protocol (MCP), AI Agents, Claude Code, Cursor AI, Prompt Engineering, Workflow Automation</p>
+    <p><b>Cloud &amp; DevOps:</b> AWS (EC2, S3, RDS, CloudFront, Load Balancers), Docker, GitHub Actions, CI/CD, Railway</p>
+    <p><b>Data &amp; Observability:</b> PostgreSQL, MySQL, MongoDB, Elasticsearch, Prisma, Grafana, Sentry</p>
+    <p><b>Mobile &amp; Product:</b> iOS App Development (Capacitor, CallKit), App Store Publishing &amp; Review, Product Design, Design Systems, Release Management</p>
+    <p><b>Practices:</b> Software Architecture, System Design, RESTful APIs, Performance Optimization, Agile/Scrum, Technical Documentation (Notion)</p>
+  </div>
+
+  <h2>Education</h2>
+  <div class="row"><div class="l">BS Information Technology, Magna Cum Laude</div><div class="r">2016 – 2020</div></div>
+  <p class="sub" style="font-style:normal">Nueva Ecija University of Science and Technology</p>
+</body>
+</html>

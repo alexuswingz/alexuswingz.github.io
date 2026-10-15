@@ -1,0 +1,10 @@
+import { chromium } from 'playwright-core';
+import { pathToFileURL } from 'node:url';
+const [html, out] = process.argv.slice(2);
+const browser = await chromium.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true });
+const page = await browser.newPage();
+await page.goto(pathToFileURL(html).href, { waitUntil: 'load' });
+await page.evaluate(() => document.fonts.ready); await page.waitForTimeout(500);
+await page.pdf({ path: out, format: 'A4', printBackground: true, preferCSSPageSize: true });
+await browser.close();
+console.log('written', out);

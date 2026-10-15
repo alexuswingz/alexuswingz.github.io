@@ -8,7 +8,7 @@
   @page { size: A4; margin: 12mm 13mm 12mm 13mm; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  body { font-family: 'Lato', 'Segoe UI', Arial, sans-serif; font-size: 9.25pt; line-height: 1.27; color: #1c1c1c; }
+  body { font-family: 'Lato', 'Segoe UI', Arial, sans-serif; font-size: 9.15pt; line-height: 1.26; color: #1c1c1c; }
   a { color: #1a5fb4; text-decoration: none; }
   .name { text-align: center; font-size: 21pt; font-weight: 700; letter-spacing: 0.06em; color: #1f3b5a; margin: 0; }
   .title { text-align: center; font-size: 10.5pt; color: #444; margin: 3px 0 0; }
@@ -40,35 +40,40 @@
   <p class="contact"><span>+63 930 623 6460</span><span>alexuskarljoaquin@gmail.com</span><span><a href="https://alexuskarljoaquin.com">alexuskarljoaquin.com</a> (portfolio with live app demos)</span></p>
 
   <h2>Profile</h2>
-  <p>Senior Full Stack Lead Engineer with 8 years of experience taking complex platforms from blank page to production — and 4+ years leading engineering teams while staying deeply hands-on. One of the earliest adopters of AI-native development in his organizations: introduced Model Context Protocol (MCP), Claude Code, and Cursor AI company-wide and retrained entire teams around AI-powered workflows, fundamentally changing how software gets shipped. Designed, built, and launched a commercial iOS finance app — Cashn't — solo, from product design through App Store release, and has since shipped a portfolio of seven more products end to end.</p>
+  <p>Senior Full Stack Lead Engineer with 8 years of experience taking complex platforms from blank page to production — and 4+ years leading 5-engineer teams at three consecutive companies while staying deeply hands-on. One of the earliest adopters of AI-native development in his organizations: introduced Model Context Protocol (MCP), Claude Code, and Cursor AI company-wide and retrained entire teams around AI-powered workflows, fundamentally changing how software gets shipped. Designed, built, and launched a commercial iOS finance app — Cashn't — solo, from product design through App Store release, and has since shipped seven more products end to end.</p>
 
-  <h2>Why Hire Me</h2>
-  <ul>
-    <li><b>Full product ownership, proven publicly.</b> Shipped Cashn't, a paid budget-tracking app live on the Apple App Store, built entirely solo: product design, AI coach, backend API, security, privacy compliance, and App Store review — the complete lifecycle most engineers never touch. Every project below can be tried live at alexuskarljoaquin.com.</li>
-    <li><b>AI transformation leader, not just user.</b> Introduced MCP, Claude Code, and Cursor AI to entire engineering organizations, wrote the adoption standards, and trained the engineers. Companies hiring for AI-readiness get someone who has already led that transition twice.</li>
-    <li><b>Builds from zero, at production quality.</b> Twice trusted to architect financing platforms from scratch — systems handling real money, where reliability isn't optional — and delivered them with high-availability AWS infrastructure, observability, and automated pipelines.</li>
-    <li><b>Multiplies teams.</b> Led and mentored 5-engineer teams at three consecutive companies, running disciplined Agile delivery while raising the technical bar through code review, documentation culture, and hands-on coaching.</li>
-  </ul>
 
   <h2>Selected Projects — Built Solo, Zero to Deployment</h2>
-  <div class="row"><div class="l">Cashn't — Budget Tracker <span>| Founder, Sole Engineer &amp; Designer</span></div><div class="r">2026 – Present</div></div>
-  <p class="sub">Paid iOS finance app, live on the Apple App Store — apps.apple.com/app/id6789244062 · React 19, TypeScript, Capacitor, Express + PostgreSQL on Railway, Firebase Auth</p>
+  <p class="note">All architected, built, tested and deployed by me alone, with an AI-native workflow (Claude Code and Cursor driven by per-repo skill files; decisions, runbooks and checklists written down as the source of truth). Live demos: alexuskarljoaquin.com.</p>
+  <div class="row"><div class="l">Cashn't — Budget Tracker <span>| Paid iOS app, live on the App Store (apps.apple.com/app/id6789244062)</span></div><div class="r">2026 – Present</div></div>
+  <p class="sub">React 19 · TypeScript · Vite · Capacitor 8 · Firebase Auth · Express + PostgreSQL on Railway · Xcode / App Store Connect API</p>
   <ul>
-    <li>A "safe to spend today" engine that computes one honest daily number from balances, bills, paydays, and savings goals; net worth across cash, banks, e-wallets (GCash, Maya), investments, and crypto; trip envelopes and group pots with automatic who-owes-who settlement.</li>
-    <li>Built an AI money coach into the product — plain-language questions answered with plans generated from the user's actual data — practical, production LLM integration.</li>
-    <li>Privacy as a feature: local-first guest mode, Face ID lock, privacy masking, in-app account deletion, published privacy policy — passed App Store review on the first submission; v1.1 shipped within days of launch. Runs the entire product operation: ASO, release management, pricing, roadmap.</li>
+    <li><b>Architecture:</b> local-first — state lives on the device and syncs as versioned snapshots to a small Express + Postgres API (GET/PUT/DELETE per user), so the app works offline and as a guest, and account deletion is one endpoint (App Store 5.1.1). Firebase handles Apple, Google and email sign-in; guests sync under a device id and migrate on sign-in.</li>
+    <li><b>Design system first:</b> wrote DESIGN.md ("Banknote After Dark") before any UI — colour tokens, a CVD-checked chart palette with contrast ratios, type scale, motion rules — then built every screen from those tokens; a custom service worker makes the web build an installable PWA.</li>
+    <li><b>Release engineering:</b> headless pipeline — capacitor-assets for icons/splash, xcodebuild archive/export with automatic provisioning via an App Store Connect API key, altool upload — and an App Review demo account reset through the Firebase Admin SDK. Passed review first time; v1.1 shipped days later.</li>
   </ul>
-  <div class="proj"><div class="l">LOCA — hyperlocal give / ask / borrow / help app <span>· React, NestJS + Prisma, PostgreSQL, Capacitor iOS, Firebase sign-in, APNs push, S3, Railway</span></div>
-    <ul><li>34-table schema, end-to-end auth (email, Google, Apple), two-sided borrow handoffs, messaging with live SSE feed, rules-based matching, English/Tagalog + OpenAI moderation, 17 e2e suites, hardened deployment (CSP, HSTS, rate limits). Live on Railway.</li></ul></div>
-  <div class="proj"><div class="l">Ghostn't — dating app that's open one hour a night <span>· React, Capacitor, Express 5, PostgreSQL, WebSockets, CallKit</span></div>
-    <ul><li>Answers-before-faces matching with a three-night reveal ladder; WebSocket live chat with server-authoritative countdowns; single-round-trip endpoints, keyset pagination, advisory locks; route-level code splitting. API live on Railway, iOS build in App Store review.</li></ul></div>
-  <div class="proj"><div class="l">Studyverse — student productivity &amp; social learning <span>· React 19, TypeScript, Tailwind 4, Node + PostgreSQL, WebSockets, OpenAI, Capacitor</span></div>
-    <ul><li>Brand and design system built from a scripted SVG pipeline (WCAG AA); AI turns timetable photos into schedules and notes into reviewers with flashcard decks; SWR cache + realtime client so no screen ever shows a skeleton.</li></ul></div>
-  <div class="proj"><div class="l">Cinemi — AI photo studio <span>· React 19, TypeScript, Tailwind 4, Radix, MediaPipe (WASM)</span></div>
-    <ul><li>Token-driven design system whose reference page reads values live from CSS; slash-command prompt composer, before/after compare, on-device face retouching that never uploads photos; monetization components (credits, rewarded ads).</li></ul></div>
-  <div class="proj"><div class="l">Job Finder <span>· FastAPI, httpx, PostgreSQL, React, TanStack Query</span> &nbsp;&amp;&nbsp; Alexus Legal AI <span>· Next.js 14, OpenAI, PostgreSQL, PWA</span></div>
-    <ul><li>Job Finder aggregates LinkedIn, Indeed, JobStreet and Google Jobs with free direct scrapers and RapidAPI fallbacks, dedupes and caches, and scores every listing 0–100 against a CV. Alexus Legal AI is a streaming, empathetic legal companion for Philippine law with persisted conversations and document-image analysis.</li></ul></div>
-
+  <div class="proj"><div class="l">LOCA — hyperlocal give / ask / borrow / help app <span>· pnpm monorepo · React + Vite · NestJS + Prisma · PostgreSQL 18 · Capacitor iOS · Caddy on Railway</span></div>
+    <ul>
+      <li><b>How it was built:</b> monorepo with shared types/values packages; a 34-table Prisma schema evolved through 18 migrations; the repo runs its own embedded PostgreSQL and seed data, so a new machine is productive in three commands; environment validated at boot.</li>
+      <li><b>Security and quality:</b> cookie sessions for web, token sessions for the native app, origin-checked writes, per-client rate limits, CSP/HSTS; 17 end-to-end suites (auth, transactions, messaging, push, moderation…) run against the local database. Deployed with Caddy serving the static app and proxying /api over Railway's private network, so the API, Postgres and storage never get a public address — all from a written DEPLOYMENT.md checklist.</li>
+    </ul></div>
+  <div class="proj"><div class="l">Ghostn't — dating app open one hour a night <span>· React 19 · Capacitor 8 · Express 5 · PostgreSQL · WebSockets · CallKit (Swift) · Railway</span></div>
+    <ul>
+      <li><b>Performance by design:</b> one pg pool with statement timeouts; every endpoint a single round-trip (CTEs, LEFT JOIN LATERAL, no N+1); keyset pagination; partial indexes; advisory locks serialising competing line-opens; WebSocket push with heartbeat reaping instead of polling. Client: route-level code splitting (1–5 KB screens) and server-authoritative countdowns with measured clock skew.</li>
+      <li><b>Shipping:</b> SQL schema migrations, a scripted end-to-end smoke test that walks the reviewer's path (profile → room → open a line → chat → hold → delete account), seeded demo personas to keep the room alive for App Review, a health-checked Railway service, and the same headless TestFlight pipeline as Cashn't.</li>
+    </ul></div>
+  <div class="proj"><div class="l">Studyverse — student productivity &amp; social learning <span>· React 19 · TypeScript (strict) · Vite 8 · Tailwind 4 tokens · Node + PostgreSQL · WebSockets · OpenAI · Capacitor</span></div>
+    <ul>
+      <li>Built mock-first: a one-file service switch runs the app on in-memory mocks or the real API, so UI and backend progressed in parallel. Stale-while-revalidate cache with prefetched tab roots; WebSocket client (reconnect, backoff, heartbeat) applies events straight into the cache. Brand assets generated from geometry by a scripted SVG/sharp pipeline; every route verified at iPhone size in both themes with zero console errors and WCAG AA contrast. API containerised with migrations and seeds on Railway.</li>
+    </ul></div>
+  <div class="proj"><div class="l">Cinemi — AI photo studio <span>· React 19 · TypeScript 6 · Vite 8 · Tailwind 4 · Radix · CVA · MediaPipe WASM</span></div>
+    <ul>
+      <li>Token-driven design system (primitives → semantic tokens → Tailwind theme) with Tailwind's default palette disabled so only semantic utilities compile; the reference page reads token values live from CSS so docs cannot drift. Face retouching runs MediaPipe's face landmarker in WebAssembly, lazy-loaded on first use, so photos never leave the device.</li>
+    </ul></div>
+  <div class="proj"><div class="l">Job Finder <span>· FastAPI · httpx · PostgreSQL · React · TanStack Query</span> &nbsp;&amp;&nbsp; Alexus Legal AI <span>· Next.js 14 · OpenAI streaming · PostgreSQL · PWA</span></div>
+    <ul>
+      <li>Job Finder: a provider module per job board — free direct scrapers (SEEK JSON API, LinkedIn guest endpoint, Indeed mosaic JSON) with RapidAPI fallback — fanned out concurrently with asyncio, deduplicated and cached six hours; weighted scoring engine (skills 45 %, title 30 %, recency 15 %, location 10 %); SQLite locally, Postgres on Railway. Alexus Legal AI: Next.js route handlers streaming OpenAI responses, a prompt engineered for empathetic case-specific answers, per-user conversations in Postgres.</li>
+    </ul></div>
   <h2 class="pb">Work Experience</h2>
   <div class="row"><div class="l">Senior Full Stack Engineer <span>| Cloud Employee</span></div><div class="r">Apr 2025 – Present</div></div>
   <ul>
